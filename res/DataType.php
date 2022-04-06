@@ -11,7 +11,7 @@ abstract class DataType
         if (!$this->isInstance()) {
             switch(gettype($this->value)) {
                 case 'array':
-                    // error_reporting(E_ALL & ~E_NOTICE);
+                    error_reporting(E_ALL & ~E_NOTICE);
                     $this->error = 'Error: Array[' . implode(', ', $this->value) . '] is not of type ' . get_class($this) . $this->format;
                     break;
                 case 'object':
